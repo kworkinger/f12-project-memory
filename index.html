@@ -5,10 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory-Game</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kings&display=swap');
+        </style>
 </head>
 <body>
-    
+    <header>
+        <nav>
+            <a href="/">Home</a>
+        </nav>
+        <div class="heading">
+            <h1>16 Card Memory</h1>
+        </div>
+    </header>
     <section class = "memory-game">
         <div class="memory-card" data-image="react">
             <img class="front-face" src="img/react.jfif" alt="React">
@@ -86,6 +96,13 @@
             <img class="back-face" src="img/frontendWide.jfif" alt="Memory Card">
         </div>
     </section>
-    <script src="scripts.js"></script>
+    <footer>
+        <h2>Monthly Newsletter: memory board updates and new games!</h2>
+        <form>
+            <input placeholder="johndoe@yahoo.com">
+            <button type="submit">Subscribe</button>
+        </form>
+    </footer>
+    <script src="/js"></script>
 </body>
 </html>

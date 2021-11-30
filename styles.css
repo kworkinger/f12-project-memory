@@ -2,11 +2,12 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Kings', cursive;
 }
 
 body {
     height: 100vh;
-    display: flex;
+    /* display: flex; */
     background-color: mediumaquamarine;
 }
 
@@ -17,6 +18,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
+    padding: 10px;
 }
 
 .memory-card {
@@ -56,4 +58,67 @@ body {
 
 img {
     object-fit:fill;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    padding: 10px;
+    background-color: yellow;
+}
+
+a {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+
+a:hover {
+    transform: scale(1.2)
+}
+
+a:active {
+    transform: scale(.80)
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    padding: 10px;
+}
+
+footer {
+    width: 100vw;
+}
+
+h2 {
+    background-color: yellow;
+    width: 100vw;
+    text-align: center;
+}
+
+input {
+    width: 14vw;
+}
+
+form {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    width: 5vw;
+    background-color: thistle;
+}
+
+button:hover {
+    transform: scale(1.1)
+}
+
+button:active {
+    transform: scale(.8)
 }
