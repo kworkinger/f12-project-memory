@@ -6,6 +6,7 @@
 
 body {
     height: 100vh;
+    display: flex;
     background-color: mediumaquamarine;
 }
 
@@ -15,6 +16,7 @@ body {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
+    perspective: 1000px;
 }
 
 .memory-card {
@@ -49,7 +51,7 @@ body {
 }
 
 .front-face {
-    transform: rotateY(180deg)
+    transform: rotateY(180deg);
 }
 
 img {
