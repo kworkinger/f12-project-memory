@@ -14,8 +14,24 @@ app.get("/", (req, res) => {
 
 app.use('/js', express.static(path.join(__dirname, '../scripts.js')))
 app.use('/styles', express.static(path.join(__dirname, '../styles.css')))
-app.use('/', express.static(path.join(__dirname, '../index.html')))
 app.use('/img', express.static(path.join(__dirname, '../img')))
+
+const users = []
+let globalId = 1
+app.post('/register', (req, res) => {
+    console.log('Registering email')
+    let {email} = req.body
+    let newUser = {
+        id: globalId,
+        email
+    }
+    console.log(newUser)
+    users.push(newUser)
+    res.status(200).send(newUser)
+
+    globalId++
+    return
+})
 
 const port = process.env.PORT || 5005
 

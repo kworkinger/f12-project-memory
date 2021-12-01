@@ -1,5 +1,23 @@
-const cards = document.querySelectorAll('.memory-card')
+// const e = require("express")
 
+const cards = document.querySelectorAll('.memory-card')
+const registerUser = document.querySelector('.email')
+
+// const baseURL = `http://localhost:5005`
+
+const register = event => {
+    event.preventDefault()
+    let input = event.target.parentNode.querySelector('input').value
+    const body = {email: input}
+    console.log(body)
+    axios.post(`/register`, body)
+    .then(res => { const {id, email} = res.data
+        alert(`${id}, ${email}`)
+    }).catch(err => {
+        console.log(err)
+        alert('Error, please try again.')
+    })
+}
 let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard
@@ -52,9 +70,10 @@ function resetBoard() {
 
 (function shuffle() {
     cards.forEach(card => {
-        let randomPos = Math.floor(Math.random()*12)
+        let randomPos = Math.floor(Math.random()*16)
         card.style.order = randomPos
     })
 })()
 
 cards.forEach(card => card.addEventListener('click', flipCard))
+registerUser.addEventListener('click', register)

@@ -108,6 +108,7 @@ form {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 10px
 }
 
 button {
@@ -121,4 +122,9 @@ button:hover {
 
 button:active {
     transform: scale(.8)
+}
+
+.subscribe {
+    display: flex;
+    justify-content: center;
 }
