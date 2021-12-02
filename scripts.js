@@ -1,18 +1,15 @@
-// const e = require("express")
 
 const cards = document.querySelectorAll('.memory-card')
 const registerUser = document.querySelector('.email')
-
-// const baseURL = `http://localhost:5005`
+const userContainer = document.querySelector('.users')
 
 const register = event => {
     event.preventDefault()
     let input = event.target.parentNode.querySelector('input').value
     const body = {email: input}
-    console.log(body)
     axios.post(`/register`, body)
-    .then(res => { const {id, email} = res.data
-        alert(`${id}, ${email}`)
+    .then(res => {
+        renderUser(res.data)
     }).catch(err => {
         console.log(err)
         alert('Error, please try again.')
@@ -74,6 +71,16 @@ function resetBoard() {
         card.style.order = randomPos
     })
 })()
+
+const renderUser = (data) => {
+    userContainer.innerHTML = ''
+    const user = document.createElement('div')
+    user.classList.add('user')
+
+    user.innerHTML = `<p>Email: ${data.email} </p>`
+
+    userContainer.appendChild(user)
+}
 
 cards.forEach(card => card.addEventListener('click', flipCard))
 registerUser.addEventListener('click', register)
